@@ -1,12 +1,22 @@
 
 import React from "react";
+import { useState } from 'react';
 
-const Tabs= (props) => {
+const Tabs= ({arr}) => {
+let [contentLine, setContentLIne]=useState("")
+
   return (
-    <p onClick={()=>(props.setContentLIne(props.obj.content))}>
-        {props.obj.title}
-        
-    </p>
+    <>
+     <ul>{
+        arr.map((item) => (
+            <li onClick={()=>setContentLIne(item.content)}>{item.title}</li>
+        ))
+        }
+       
+    </ul>
+    <p>{contentLine}</p>
+    </>
+   
   )
 }
 

@@ -1,5 +1,4 @@
 
-import { useState } from 'react';
 import React  from "react";
 import './../styles/App.css';
 import Tabs from './Tabs';
@@ -11,20 +10,12 @@ let arr = [
 ]
 
 const App = () => {
-let [contentLine, setContentLIne]=useState("")
 
   return (
     <div>
       {/* Do not remove the main div */}
-      <ul>
-        {
-          arr.map((item) => (
-            <li> <Tabs obj={item} setContentLIne={setContentLIne} /></li>
-          ))
-        }
-      </ul>
+     <Tabs arr={arr} />
 
-      <p>{contentLine}</p>
     </div>
   )
 }
